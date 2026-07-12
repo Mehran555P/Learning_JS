@@ -1,21 +1,32 @@
 // Factories
 
+// Factory Function
+function createCircle(radios) {
+    return {
+        radios,
+        draw: function() {
+            console.log("draw");
+        }
+    };
+}
 
+const newCircle = createCircle(1);
+newCircle.draw();
 
 ///////////////////////////////////////////////////////
 
-const circle = {
-    radios: 1,
-    location: {
-        x: 1,
-        y: 1
-    },
-    draw: function() {
-        console.log("draw")
-    }
-};
+// const circle = {
+//     radios: 1,
+//     location: {
+//         x: 1,
+//         y: 1
+//     },
+//     draw: function() {
+//         console.log("draw")
+//     }
+// };
 
-circle.draw();
+// circle.draw();
 
 
 
