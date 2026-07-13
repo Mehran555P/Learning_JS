@@ -1,17 +1,38 @@
+
+///////////////////////////////////////////////////////
+
+
+
+
+
+///////////////////////////////////////////////////////
+
 // Factories
 
-// Factory Function
-function createCircle(radios) {
-    return {
-        radios,
-        draw: function() {
-            console.log("draw");
-        }
-    };
+// // Factory Function
+// function createCircle(radios) {
+//     return {
+//         radios,
+//         draw: function() {
+//             console.log("draw");
+//         }
+//     };
+// }
+
+// const newCircle = createCircle(1);
+// newCircle.draw();
+
+// // Constructors
+
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log("draw");
+    }
 }
 
-const newCircle = createCircle(1);
-newCircle.draw();
+const anotherCircle = new Circle(1);
+anotherCircle.draw();
 
 ///////////////////////////////////////////////////////
 
@@ -27,9 +48,6 @@ newCircle.draw();
 // };
 
 // circle.draw();
-
-
-
 
 ///////////////////////////////////////////////////////
 
