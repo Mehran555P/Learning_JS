@@ -1,18 +1,39 @@
 
 ///////////////////////////////////////////////////////
 
+// // Functions are Objects in JS!
+
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log("draw");
+    }
+}
+
+Circle.call({}, 1);
+Circle.apply({}, [1]);
 
 
+const another = new Circle(1);
 
+// const circle = new Circle1(1);
+
+// const Circle1 = new Function('radius', `
+//     this.radius = radius;
+//     this.draw = function() {
+//         console.log("draw");
+//     }
+//     `);
 
 ///////////////////////////////////////////////////////
 
-// Factories
+// // Factories
 
 // // Factory Function
-// function createCircle(radios) {
+
+// function createCircle(radius) {
 //     return {
-//         radios,
+//         radius,
 //         draw: function() {
 //             console.log("draw");
 //         }
@@ -24,15 +45,15 @@
 
 // // Constructors
 
-function Circle(radius) {
-    this.radius = radius;
-    this.draw = function() {
-        console.log("draw");
-    }
-}
+// function Circle(radius) {
+//     this.radius = radius;
+//     this.draw = function() {
+//         console.log("draw");
+//     }
+// }
 
-const anotherCircle = new Circle(1);
-anotherCircle.draw();
+// const anotherCircle = new Circle(1);
+// anotherCircle.draw();
 
 ///////////////////////////////////////////////////////
 
