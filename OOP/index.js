@@ -1,5 +1,25 @@
 ///////////////////////////////////////////////////////
 
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function draw() {
+        console.log("draw");
+    }
+}
+
+const circle = new Circle(10);
+
+circle.location = { x: 1 };
+circle['locatoin'] = { x: 1 };
+// dynamic notation
+const propertyName = 'location';
+circle[propertyName] = { x: 1 };
+
+delete circle.location;
+// delete circle['location'];
+
+///////////////////////////////////////////////////////
+
 // // Value(primitives) vs references types
 
 // // primitives are copied by their value
@@ -13,14 +33,14 @@
 // let y = x;
 // x.value = 20;
 
-let obj = {value: 10};
+// let obj = {value: 10};
 
-function increase(obj) {
-    obj.value++;
-}
+// function increase(obj) {
+//     obj.value++;
+// }
 
-increase(obj);
-console.log(obj.value);
+// increase(obj);
+// console.log(obj.value);
 
 
 ///////////////////////////////////////////////////////
