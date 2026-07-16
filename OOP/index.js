@@ -1,7 +1,13 @@
+
+
+
 ///////////////////////////////////////////////////////
+
+// Enumerating properties
 
 function Circle(radius) {
     this.radius = radius;
+    this.PI = Math.PI;
     this.draw = function draw() {
         console.log("draw");
     }
@@ -9,14 +15,41 @@ function Circle(radius) {
 
 const circle = new Circle(10);
 
-circle.location = { x: 1 };
-circle['locatoin'] = { x: 1 };
-// dynamic notation
-const propertyName = 'location';
-circle[propertyName] = { x: 1 };
+// for (let key in circle) {
+//     console.log(key, circle[key]);
+// }
 
-delete circle.location;
-// delete circle['location'];
+for (let key in circle) {
+    if (typeof circle[key] !== 'function')
+        console.log(key, circle[key]);
+}
+
+const keys = Object.keys(circle);
+console.log(keys);
+
+if ('radius' in circle)
+    console.log("Circle has a radius");
+
+
+///////////////////////////////////////////////////////
+
+// function Circle(radius) {
+//     this.radius = radius;
+//     this.draw = function draw() {
+//         console.log("draw");
+//     }
+// }
+
+// const circle = new Circle(10);
+
+// circle.location = { x: 1 };
+// circle['locatoin'] = { x: 1 };
+// // dynamic notation
+// const propertyName = 'location';
+// circle[propertyName] = { x: 1 };
+
+// delete circle.location;
+// delete circle['location'];   
 
 ///////////////////////////////////////////////////////
 
