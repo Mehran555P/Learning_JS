@@ -1,8 +1,7 @@
 
-
 ///////////////////////////////////////////////////////
 
-// Abstraction_2
+// Getters/ Setters
 
 function Circle(radius) {
 
@@ -13,6 +12,10 @@ function Circle(radius) {
 
     let defaultLocation = { x: 0, y: 0 };
 
+    this.getDefaultLocation = function() {
+        return defaultLocation;
+    }
+
     let computeOptimumLocation = function(factor) {
         // ...
     }
@@ -22,11 +25,55 @@ function Circle(radius) {
         computeOptimumLocation(0.1);
         console.log("draw");
     }
+
+    Object.defineProperty(this, 'defaultLocation', {
+        get: function() {
+            return defaultLocation;
+        },
+        set: function(value) {
+            if (!value.x || !value.y)
+                throw new Error("Invalid value");
+                
+            defaultLocation = value;
+        }
+    });
 }
 
 const circle = new Circle(10);
-
+const gdl = circle.getDefaultLocation();
+console.log(gdl);
 circle.draw();
+
+
+
+
+///////////////////////////////////////////////////////
+
+// // Abstraction_2
+
+// function Circle(radius) {
+
+//     let color = "red";
+
+//     this.radius = radius;
+//     let PI = Math.PI;
+
+//     let defaultLocation = { x: 0, y: 0 };
+
+//     let computeOptimumLocation = function(factor) {
+//         // ...
+//     }
+
+//     this.draw = function draw() {
+
+//         computeOptimumLocation(0.1);
+//         console.log("draw");
+//     }
+// }
+
+// const circle = new Circle(10);
+
+// circle.draw();
 
 
 
