@@ -1,34 +1,89 @@
 
 
-
 ///////////////////////////////////////////////////////
 
-// Enumerating properties
+// Abstraction_2
 
 function Circle(radius) {
+
+    let color = "red";
+
     this.radius = radius;
-    this.PI = Math.PI;
+    let PI = Math.PI;
+
+    let defaultLocation = { x: 0, y: 0 };
+
+    let computeOptimumLocation = function(factor) {
+        // ...
+    }
+
     this.draw = function draw() {
+
+        computeOptimumLocation(0.1);
         console.log("draw");
     }
 }
 
 const circle = new Circle(10);
 
-// for (let key in circle) {
-//     console.log(key, circle[key]);
+circle.draw();
+
+
+
+///////////////////////////////////////////////////////
+
+// // Abstraction
+
+
+// function Circle(radius) {
+//     this.radius = radius;
+//     this.PI = Math.PI;
+
+//     this.defaultLocation = { x: 0, y: 0 };
+
+//     this.computeOptimumLocation = function(factor) {
+//         // ...
+//     }
+
+//     this.draw = function draw() {
+
+//         this.computeOptimumLocation(0.1);
+//         console.log("draw");
+//     }
 // }
 
-for (let key in circle) {
-    if (typeof circle[key] !== 'function')
-        console.log(key, circle[key]);
-}
+// const circle = new Circle(10);
 
-const keys = Object.keys(circle);
-console.log(keys);
 
-if ('radius' in circle)
-    console.log("Circle has a radius");
+
+///////////////////////////////////////////////////////
+
+// // Enumerating properties
+
+// function Circle(radius) {
+//     this.radius = radius;
+//     this.PI = Math.PI;
+//     this.draw = function draw() {
+//         console.log("draw");
+//     }
+// }
+
+// const circle = new Circle(10);
+
+// // for (let key in circle) {
+// //     console.log(key, circle[key]);
+// // }
+
+// for (let key in circle) {
+//     if (typeof circle[key] !== 'function')
+//         console.log(key, circle[key]);
+// }
+
+// const keys = Object.keys(circle);
+// console.log(keys);
+
+// if ('radius' in circle)
+//     console.log("Circle has a radius");
 
 
 ///////////////////////////////////////////////////////
